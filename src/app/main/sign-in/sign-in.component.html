@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="content flex-col">
+        <span class="title">Abrir minha conta</span>
+
+        <form [formGroup]="createAcountForm"
+            (ngSubmit)="onSubmit()">
+
+            <div class="flex-row">
+                <div class="form-page">
+                    <div class="input-container flex-col">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" formControlName="nome"
+                            [ngClass]="{'invalid': createAcountForm.get('nome').invalid 
+                                && createAcountForm.get('nome').dirty}">
+                    </div>
+        
+                    <div class="input-container flex-col">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" formControlName="cpf" mask="000.000.000-00"
+                            [ngClass]="{'invalid': createAcountForm.get('cpf').invalid 
+                                && createAcountForm.get('cpf').dirty}">
+                    </div>
+        
+                    <div class="input-container flex-col">
+                        <label for="celular">Celular</label>
+                        <input id="celular" type="text" formControlName="celular" mask="(00)00000-0000"
+                            [ngClass]="{'invalid': createAcountForm.get('celular').invalid 
+                                && createAcountForm.get('celular').dirty}">
+                    </div>
+        
+                    <div class="input-container flex-col">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" formControlName="email"
+                            [ngClass]="{'invalid': createAcountForm.get('email').invalid 
+                                && createAcountForm.get('email').dirty}">
+                    </div>        
+                </div>
+                
+                <span class="divisor"></span>
+
+                <div class="form-page">
+                    <div class="input-container flex-col">
+                        <label for="data">Data de nascimento</label>
+                        <input id="data" type="date" formControlName="data"
+                            [ngClass]="{'invalid': createAcountForm.get('data').invalid 
+                                && createAcountForm.get('data').dirty}">
+                    </div>
+
+                    <div class="input-container flex-col">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" formControlName="senha"
+                            [ngClass]="{'invalid': createAcountForm.get('senha').invalid 
+                                && createAcountForm.get('senha').dirty}">
+                    </div>
+        
+                    <div class="input-container flex-col">
+                        <label for="confirme">Confirme sua senha</label>
+                        <input id="confirme" type="password" formControlName="confirme"
+                            [ngClass]="{'invalid': createAcountForm.get('confirme').invalid 
+                                && createAcountForm.get('confirme').dirty}">
+                    </div>
+
+                    <span class="error-msg" *ngIf="createAcountForm.get('senha').valid 
+                        && createAcountForm.get('confirme').valid
+                        && createAcountForm.get('senha').value != createAcountForm.get('confirme').value">
+                        
+                        As senhas preenchidas estão diferentes.
+                    </span>
+                </div>
+            </div>
+
+            <div class="checkbox-container">
+                <div>
+                    <input id="termos" type="checkbox" formControlName="termos">
+                    <label for="termos">Aceito os termos do contrato</label>
+                </div>
+
+                <div>
+                    <input id="notificacoes" type="checkbox" formControlName="notificacoes">
+                    <label for="notificacoes">Desejo receber notificações</label>
+                </div>
+            </div>
+           
+            <div class="button-container">
+                <button class="button" type="submit">entrar</button>
+            </div>    
+        </form>
+    </div>
+</div>

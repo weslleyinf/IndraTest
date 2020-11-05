@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="content flex-col">
+        <span class="title">Acessar sua conta</span>
+       
+        <form [formGroup]="loginForm"
+            (ngSubmit)="onSubmit(loginForm.value)">
+    
+            <div class="input-container flex-row"
+                [ngClass]="{'invalid': loginForm.invalid && loginForm.dirty}">
+
+                <label class="hidden" for="agencia">Agência</label>
+                <input id="agencia" type="text" 
+                    placeholder="Agência"
+                    formControlName="agencia"
+                    mask="0000">
+
+                <label class="hidden" for="conta">Conta</label>
+                <input id="conta" type="text" 
+                    placeholder="Conta"
+                    formControlName="conta"
+                    mask="00000-0">
+            </div>
+    
+            <div class="button-container">
+                <button class="button" type="submit">entrar</button>
+            </div>
+        </form>
+
+        <a class="subtext" [routerLink]="['sign-in']">criar uma conta nova</a>
+    </div>
+</div>

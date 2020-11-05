@@ -1,0 +1,46 @@
+@import '../app.component'
+
+.toolbar 
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 5
+    width: 100%
+    font-weight: 600
+    display: flex
+    align-items: center
+    background-color: $background-color
+    color: $primary-color
+    border-bottom: solid 1px $primary-color
+    
+
+    #logo-itau
+        height: 50px
+        padding: 19px 0
+        margin: 0 16px
+
+    ul 
+        height: $header-height
+        margin: 0
+        padding: 0
+        overflow: hidden
+        flex-wrap: wrap
+
+        li 
+            list-style-type: none
+            padding: 0 20px
+            font-family: $primary-font
+            font-size: 1.15em
+            border-bottom-width: 4px
+            line-height: calc(#{$header-height} - 4px)
+            cursor: pointer
+
+            &:hover
+                border-bottom-style: solid
+                border-bottom-width: 3px
+                border-bottom-color: $primary-color
+
+    .search-icon
+        float: right
+        padding: 0 20px
+        cursor: pointer

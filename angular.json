@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "IndraTestProject"
+    }
+  },
+  "defaultProject": "IndraTestProject",
+  "cli": {
+    "analytics": "c57f4779-13b1-4f60-8fa9-769b10291db0"
+  }
 }

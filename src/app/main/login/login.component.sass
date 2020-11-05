@@ -1,0 +1,70 @@
+@import '../../app.component'
+
+.container 
+    position: absolute
+    top: $header-height
+    left: 0
+    z-index: 0
+    width: 100%
+    padding-top: 20px
+    display: flex
+    align-items: center
+
+    .title
+        font-size: 1.3em
+        line-height: 3.5em
+        color: $primary-color
+        font-family: $primary-font
+        font-weight: bold
+        text-transform: uppercase
+
+    .invalid
+        border-color: $danger-color !important
+
+    .input-container
+        line-height: 28px
+        height: 100%
+        background: #FFFFFF
+        border: solid 1px $inactive-color
+        border-radius: 4px
+        padding: 8px 12px
+        margin-bottom: 20px
+        color: $text-color
+
+        input
+            font-size: 16px
+            border: none
+            text-align: center
+            font-family: $secondary-font
+            opacity: 0.8
+            width: 120px
+
+        input:first-of-type
+            width: 80px
+
+        input:focus
+            outline: none
+    
+    .button-container
+        display: flex
+        margin-bottom: 7px
+
+        .button
+            margin: auto
+            border: none
+            padding: 10px 0
+            border-radius: 5px
+            font-size: 1.15em
+            font-weight: 700
+            font-family: $primary-font
+            background-color: $primary-color
+            color: $background-color
+            min-width: 120px
+
+        button:focus
+            outline: none
+    
+    .subtext
+        font-size: 0.8em
+        color: $secondary-font
+        font-family: $secondary-font 
